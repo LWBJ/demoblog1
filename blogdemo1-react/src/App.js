@@ -1,5 +1,5 @@
 import React from 'react';
-import FaceDisplay from './components/faceDisplay.js'
+import FaceDisplay from './components/FaceDisplay.js'
 
 function App() {
   return (

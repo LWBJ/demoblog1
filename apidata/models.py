@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Place(models.Model):
   name = models.CharField(max_length=100, unique=True)
+  worn_out = models.BooleanField()
   
   class Meta:
     ordering = ['name']
@@ -45,6 +46,8 @@ class Race(models.Model):
 class Face(models.Model):
   name = models.CharField(max_length=100, unique=True)
   race = models.ForeignKey(Race, on_delete=models.SET_NULL, null=True)
+  worn_out = models.BooleanField()
+  familiar = models.BooleanField()
   
   class Meta:
     ordering = ['name']

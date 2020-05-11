@@ -8,7 +8,7 @@ class PlaceSerializer(serializers.HyperlinkedModelSerializer):
 
   class Meta:
     model = Place
-    fields = ['url','name','race_set_list','race_set','face_set_list']
+    fields = ['url','name','race_set_list','race_set','face_set_list', 'worn_out']
     
   def get_race_set_list(self, obj):
     set = []
@@ -49,7 +49,7 @@ class FaceSerializer(serializers.HyperlinkedModelSerializer):
 
   class Meta:
     model = Face
-    fields = ['url','name','race_text','race','place_text']
+    fields = ['url','name','race_text','race','place_text', 'worn_out', 'familiar']
     
   def get_race_text(self, obj):
     return str(obj.race)
