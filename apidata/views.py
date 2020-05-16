@@ -88,6 +88,18 @@ class FaceViewSet(viewsets.ModelViewSet):
     if place:
       queryset = queryset.filter(race__place__name__icontains=place)
       
+    worn_out = params.get('worn_out', False)
+    if worn_out == 'T':
+      queryset = queryset.filter(worn_out=True)
+    elif worn_out == 'F':
+      queryset = queryset.filter(worn_out=False)
+      
+    familiar = params.get('familiar', False)
+    if familiar == 'T':
+      queryset = queryset.filter(familiar=True)
+    elif familiar == 'F':
+      queryset = queryset.filter(familiar=False)
+      
     order = params.get('order', False)
     if order:
       queryset = queryset.order_by(order)
