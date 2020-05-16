@@ -101,7 +101,12 @@ class FaceViewSet(viewsets.ModelViewSet):
       queryset = queryset.filter(familiar=False)
       
     order = params.get('order', False)
-    if order:
+    if order and order=='place':
+      queryset = queryset.order_by('race__place')
+    elif order and order=='-place':
+      queryset = queryset.order_by('-race__place')
+    elif order:
       queryset = queryset.order_by(order)
+    
     
     return queryset

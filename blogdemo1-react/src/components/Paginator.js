@@ -11,18 +11,19 @@ function Paginator(props) {
       }
     }
 
-    let previous = (props.current>1 ? <button onClick={()=>props.changePage(props.current - 1)}>Previous</button> : <button disabled={true}>Previous</button>)
-    let forwards = (props.current<noPages ? <button onClick={()=>props.changePage(props.current + 1)}>forwards</button> : <button disabled={true}>Forwards</button>)
+    let previous = (props.current>1 ? <button className='btn btn-secondary mr-1' onClick={()=>props.changePage(props.current - 1)}>Previous</button> : <button className='btn btn-secondary mr-1' disabled={true}>Previous</button>)
+    let forwards = (props.current<noPages ? <button className='btn btn-secondary mr-1' onClick={()=>props.changePage(props.current + 1)}>forwards</button> : <button className='btn btn-secondary mr-1' disabled={true}>Forwards</button>)
     
     return (
-      <div>
-        <span>
-          {previous}
-          <select value={props.current} onChange={ (e)=>props.changePage(e.target.value) }>
+      <div className='row'>
+        <label className='col-auto col-form-label' for={props.id + 'PageNo'}>Page No: </label>
+        <div className='col-auto'>
+          <select id={props.id + 'PageNo'} className='form-control' value={props.current} onChange={ (e)=>props.changePage(e.target.value) }>
               {pageInputOptions}
           </select>
-          {forwards}
-        </span>
+        </div>
+        {previous}
+        {forwards}
       </div>
     )
 }

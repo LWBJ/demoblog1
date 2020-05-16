@@ -61,7 +61,8 @@ class FaceDisplay extends React.Component {
                 worn_out: values.worn_out,
                 order: values.order.toLowerCase(),
                 asc: (values.asc==='Ascending')
-            }
+            },
+            page: 1
         }, this.refreshData)
     }
     
@@ -69,7 +70,7 @@ class FaceDisplay extends React.Component {
         let count = (!this.state.loading?this.state.data.count:'loading')
         let queryset
         if (this.state.loading){
-            queryset = 'loading'
+            queryset = <div className='col-12'><p>loading</p></div>
             count = 'loading'
         } else if (this.state.data.results && this.state.data.results.length > 0) {
             queryset = this.state.data.results.map(item=>{
@@ -77,29 +78,44 @@ class FaceDisplay extends React.Component {
             })
             count = this.state.data.count
         } else {
-            queryset = 'No data'
+            queryset = <div className='col-12'><p>No data</p></div>
             count = 0
         }
         
-        const pagination = 3
+        const pagination = 100
         
         return (
           <div>
-            <h2>Faces</h2>
-            <p>Filters</p>
+            <h2 className='mt-4'>Faces</h2>
+
             <FaceFilter onSubmit={(values)=> this.changeFilter(values)} />
             
+            <div className='row border rounded border-primary p-4 mt-4'><div className='col'>
             
-            <p>Current Name Filter: {this.state.filters.name}</p>
-            <p>Total Results: {count}</p>
-            <Paginator 
-              count={count}
-              pagination = {pagination}
-              current={this.state.page}
-              changePage={(newPageNum)=>this.changePage(newPageNum)}
-            />
-            <p>page: {this.state.page}</p>
-            {queryset}
+              <Paginator 
+                count={count}
+                pagination = {pagination}
+                id = 'faces'
+                current={this.state.page}
+                changePage={(newPageNum)=>this.changePage(newPageNum)}
+              />
+              
+              <div className='row mt-4'><div className='col-12'>
+                <p>Total Results: {count}</p>
+              </div></div>
+            
+              <div className='row mb-4'>  
+                {queryset}
+              </div>
+              
+              <Paginator 
+                count={count}
+                pagination = {pagination}
+                id = 'faces-low'
+                current={this.state.page}
+                changePage={(newPageNum)=>this.changePage(newPageNum)}
+              />
+            </div></div>
           </div>
         )
     }
