@@ -67,7 +67,7 @@ class FaceDisplay extends React.Component {
     }
     
     render(){
-        let count = (!this.state.loading?this.state.data.count:'loading')
+        let count
         let queryset
         if (this.state.loading){
             queryset = <div className='col-12'><p>loading</p></div>
@@ -82,7 +82,7 @@ class FaceDisplay extends React.Component {
             count = 0
         }
         
-        const pagination = 100
+        const pagination = 3
         
         return (
           <div>
