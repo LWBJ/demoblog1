@@ -1,5 +1,6 @@
 import React from 'react'
 import RaceDisplayItem from './RaceDisplayItem.js'
+import RaceFilter from './RaceFilter.js'
 import Paginator from './Paginator.js'
 
 class RaceDisplay extends React.Component {
@@ -25,6 +26,22 @@ class RaceDisplay extends React.Component {
         this.setState({
             loading: true,
             page: parseInt(newPageNum)
+        }, this.refreshData)
+    }
+    
+    changeFilter(values) {
+        this.setState({
+            loading: true,
+            page: 1,
+            filters: {
+                name: values.name,
+                face: values.face,
+                place: values.place,
+                before: values.before,
+                after: values.after,
+                order: values.order.toLowerCase(),
+                asc: (values.asc === 'Ascending'),
+            }
         }, this.refreshData)
     }
     
@@ -75,6 +92,8 @@ class RaceDisplay extends React.Component {
         
         return (
           <div>
+            <RaceFilter onSubmit={(values)=>this.changeFilter(values)} />
+            <p>asc: {this.state.filters.asc?'true':'false'}</p>
             <Paginator 
               count = {count}
               id = 'races'

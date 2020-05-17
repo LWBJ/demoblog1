@@ -8,7 +8,7 @@ function FaceFilter(props) {
             place: '',
             familiar: '',
             worn_out: '',
-            order: 'name',
+            order: 'Name',
             asc: 'Ascending',
         })
     
@@ -25,7 +25,7 @@ function FaceFilter(props) {
             place: '',
             familiar: '',
             worn_out: '',
-            order: 'name',
+            order: 'Name',
             asc: 'Ascending',
         }}
         onSubmit = {submitFilter}
@@ -40,26 +40,26 @@ function FaceFilter(props) {
         <Form className='form'>
         <div className='form-row'>
           <div className='form-group col-12 col-md-4'>
-            <label htmlFor='name'>Name: </label>
-            <Field name='name' type='text' className='form-control'/>
+            <label htmlFor='faceFilter-name'>Name: </label>
+            <Field id='faceFilter-name' name='name' type='text' className='form-control'/>
           </div>
           
           <div className='form-group col-12 col-md-4'>
-            <label htmlFor='race'>Race: </label>
-            <Field name='race' type='text' className='form-control'/>
+            <label htmlFor='faceFilter-race'>Race: </label>
+            <Field id='faceFilter-race' name='race' type='text' className='form-control'/>
           </div>
           
           <div className='form-group col-12 col-md-4'>
-            <label htmlFor='place'>Place: </label>
-            <Field name='place' type='text' className='form-control'/>
+            <label htmlFor='faceFilter-place'>Place: </label>
+            <Field id='faceFilter-place' name='place' type='text' className='form-control'/>
           </div>
         </div>
         
         <div className='form-row'>  
         <div className='col-12 col-md-4'><div className='form-row'> 
           <div className='form-group col-6'>
-            <label htmlFor='familiar'>Familiar: </label>
-            <Field name='familiar' as='select' className='form-control'>
+            <label htmlFor='faceFilter-familiar'>Familiar: </label>
+            <Field id='faceFilter-familiar' name='familiar' as='select' className='form-control'>
               <option>T</option>
               <option>F</option>
               <option> </option>
@@ -67,8 +67,8 @@ function FaceFilter(props) {
           </div>
 
           <div className='form-group col-6'>
-            <label htmlFor='worn_out'>Worn Out: </label>
-            <Field name='worn_out' as='select' className='form-control'>
+            <label htmlFor='faceFilter-worn_out'>Worn Out: </label>
+            <Field id='faceFilter-worn_out' name='worn_out' as='select' className='form-control'>
               <option>T</option>
               <option>F</option>
               <option> </option>
@@ -78,8 +78,8 @@ function FaceFilter(props) {
           
         <div className='col-12 col-md-8'><div className='form-row'>
           <div className='form-group col-6'>
-            <label htmlFor='order'>Order: </label>
-            <Field name='order' as='select' className='form-control'>
+            <label htmlFor='faceFilter-order'>Order: </label>
+            <Field id='faceFilter-order' name='order' as='select' className='form-control'>
               <option>Name</option>
               <option>Race</option>
               <option>Place</option>
@@ -87,8 +87,8 @@ function FaceFilter(props) {
           </div>
           
           <div className='form-group col-6'>
-            <label htmlFor='asc'>Ascending or Descending: </label>
-            <Field name='asc' as='select' className='form-control'>
+            <label htmlFor='faceFilter-asc'>Ascending or Descending: </label>
+            <Field id='faceFilter-asc' name='asc' as='select' className='form-control'>
               <option>Ascending</option>
               <option>Descending</option>
             </Field>
