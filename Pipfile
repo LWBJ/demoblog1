@@ -10,6 +10,9 @@ django = "*"
 djangorestframework = "*"
 whitenoise = "*"
 django-cors-headers = "*"
+dj-database-url = "*"
+psycopg2 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

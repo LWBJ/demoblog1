@@ -44,7 +44,7 @@ class PlaceDisplay extends React.Component {
     }
     
     refreshData(){
-        let url = 'http://127.0.0.1:8000/apidata/places/?page=' + this.state.page + '&'
+        let url = 'https://lwbjdemoblog1.herokuapp.com/apidata/places/?page=' + this.state.page + '&'
         
         url += 'name=' + this.state.filters.name + '&'
         url += 'race=' + this.state.filters.race + '&'
@@ -78,7 +78,7 @@ class PlaceDisplay extends React.Component {
         let count
         
         if (this.state.loading) {
-            queryset = <div className='col-12'>loading</div>
+            queryset = <div className='col-12'><p>loading</p></div>
             count = 'loading'
         } else if (this.state.data.results && this.state.data.results.length > 0) {
             queryset = []
@@ -87,11 +87,11 @@ class PlaceDisplay extends React.Component {
             }
             count = this.state.data.count
         } else {
-            queryset = <div className='col-12'>No Data</div>
+            queryset = <div className='col-12'><p>No Data</p></div>
             count = 0
         }
         
-        const pagination = 3
+        const pagination = 100
         
         return(
           <div>

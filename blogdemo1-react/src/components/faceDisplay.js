@@ -23,7 +23,7 @@ class FaceDisplay extends React.Component {
     }
     
     refreshData(){
-        let url = 'http://127.0.0.1:8000/apidata/faces/?page=' + this.state.page + '&'
+        let url = 'https://lwbjdemoblog1.herokuapp.com/apidata/faces/?page=' + this.state.page + '&'
         url += 'name=' + this.state.filters.name +'&'
         url += 'race=' + this.state.filters.race +'&'
         url += 'place=' + this.state.filters.place +'&'
@@ -82,7 +82,7 @@ class FaceDisplay extends React.Component {
             count = 0
         }
         
-        const pagination = 3
+        const pagination = 100
         
         return (
           <div>

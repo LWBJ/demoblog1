@@ -39,22 +39,22 @@ function PlaceFilter(props) {
             <div className='form-row'>
               <div className='form-group col-12 col-md-6'>
                 <label htmlFor='placeFilter-name'>Name: </label>
-                <Field name='name' type='text' className='form-control' />
+                <Field id='placeFilter-name' name='name' type='text' className='form-control' />
               </div>
               
               <div className='form-group col-12 col-md-6'>
                 <label htmlFor='placeFilter-race'>Race: </label>
-                <Field name='race' type='text' className='form-control' />
+                <Field id='placeFilter-race' name='race' type='text' className='form-control' />
               </div>
               
               <div className='form-group col-12 col-md-6'>
                 <label htmlFor='placeFilter-face'>Face: </label>
-                <Field name='face' type='text' className='form-control' />
+                <Field id='placeFilter-face' name='face' type='text' className='form-control' />
               </div>
 
               <div className='form-group col-6 col-md-3'>
                 <label htmlFor='placeFilter-worn_out'>Worn Out: </label>
-                <Field name='worn_out' as='select' className='form-control'>
+                <Field id='placeFilter-worn_out' name='worn_out' as='select' className='form-control'>
                   <option>T</option>
                   <option>F</option>
                   <option></option>
@@ -63,7 +63,7 @@ function PlaceFilter(props) {
               
               <div className='form-group col-6 col-md-3'>
                 <label htmlFor='placeFilter-asc'>Order: </label>
-                <Field name='asc' as='select' className='form-control'>
+                <Field id='placeFilter-asc' name='asc' as='select' className='form-control'>
                   <option>Ascending</option>
                   <option>Descending</option>
                 </Field>

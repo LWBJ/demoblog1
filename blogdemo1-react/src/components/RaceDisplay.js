@@ -46,7 +46,7 @@ class RaceDisplay extends React.Component {
     }
     
     refreshData(){
-        let url='http://127.0.0.1:8000/apidata/races/?page=' + this.state.page + '&'
+        let url='https://lwbjdemoblog1.herokuapp.com/apidata/races/?page=' + this.state.page + '&'
         url += 'name=' + this.state.filters.name + '&'
         url += 'face=' + this.state.filters.face + '&'
         url += 'place=' + this.state.filters.place + '&'
@@ -76,7 +76,7 @@ class RaceDisplay extends React.Component {
         
         if (this.state.loading) {
             count = 'loading'
-            queryset = <div><p>Loading</p></div>
+            queryset = <div className='col-12'><p>loading</p></div>
         } else if (this.state.data.results && this.state.data.results.length > 0) {
             count = this.state.data.count
             queryset = []
@@ -85,10 +85,10 @@ class RaceDisplay extends React.Component {
             }
         } else {
             count = 0
-            queryset = <div><p>No data</p></div>
+            queryset = <div className='col-12'><p>No data</p></div>
         }
         
-        const pagination = 3
+        const pagination = 100
         
         return (
           <div>
