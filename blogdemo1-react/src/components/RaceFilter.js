@@ -44,50 +44,72 @@ function RaceFilter(props) {
         validate= {validate}
       >
         {props=>(
-          <Form>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-name'>Name: </label>
-              <Field id='raceFilter-name' name='name' type='text' className='form-control' />
-            </div>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-face'>Face: </label>
-              <Field id='raceFilter-face' name='face' type='text' className='form-control' />
-            </div>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-place'>Place: </label>
-              <Field id='raceFilter-place' name='place' type='text' className='form-control' />
-            </div>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-before'>Before: </label>
-              <Field id='raceFilter-before' name='before' type='date' className='form-control' />
-              <span className='text-danger'><ErrorMessage name='before' className='text-danger' /></span>
-            </div>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-after'>After: </label>
-              <Field id='raceFilter-after' name='after' type='date' className='form-control' />
-              <span className='text-danger'><ErrorMessage name='after' className='text-danger' /></span>
-            </div>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-order'>Order: </label>
-              <Field id='raceFilter-order' name='order' as='select' className='form-control'>
-                <option>Name</option>
-                <option>Place</option>
-                <option>Date</option>
-              </Field>
-            </div>
-            <div className='form-group'>
-              <label htmlFor='raceFilter-asc'>Ascending or Descending: </label>
-              <Field id='raceFilter-asc' name='asc' as='select' className='form-control'>
-                <option>Ascending</option>
-                <option>Descending</option>
-              </Field>
-              
-              <div className='form-row'>
-                <button type='submit' className='btn btn-primary mr-1' disabled={props.isSubmitting}>Filter</button>
-                <button type='reset' className='btn btn-danger' onClick={handleReset} disabled={!props.dirty || props.isSubmitting}>Reset</button>
+          <div className='row border rounded border-primary p-4 mt-4'><div className='col-12'>
+          
+          <div className='row'><div className='col-12'>
+            <h3>Filters</h3>
+          </div></div>
+          
+          <Form className='form'>
+            <div className='form-row'>
+              <div className='form-group col-12 col-md-4'>
+                <label htmlFor='raceFilter-name'>Name: </label>
+                <Field id='raceFilter-name' name='name' type='text' className='form-control' />
+              </div>
+              <div className='form-group col-12 col-md-4'>
+                <label htmlFor='raceFilter-face'>Face: </label>
+                <Field id='raceFilter-face' name='face' type='text' className='form-control' />
+              </div>
+              <div className='form-group col-12 col-md-4'>
+                <label htmlFor='raceFilter-place'>Place: </label>
+                <Field id='raceFilter-place' name='place' type='text' className='form-control' />
               </div>
             </div>
-          </Form>          
+            
+            
+            <div className='form-row'>
+            
+              <div className='col-12 col-lg-4'><div className='form-row'>
+                <div className='form-group col-6'>
+                  <label htmlFor='raceFilter-before'>Before: </label>
+                  <Field id='raceFilter-before' name='before' type='date' className='form-control' />
+                  <span className='text-danger'><ErrorMessage name='before' className='text-danger' /></span>
+                </div>
+                <div className='form-group col-6'>
+                  <label htmlFor='raceFilter-after'>After: </label>
+                  <Field id='raceFilter-after' name='after' type='date' className='form-control' />
+                  <span className='text-danger'><ErrorMessage name='after' className='text-danger' /></span>
+                </div>
+              </div></div>
+              
+              
+              <div className='col-12 col-lg-8'><div className='form-row'>
+                <div className='form-group col-12 col-md-6'>
+                  <label htmlFor='raceFilter-order'>Order: </label>
+                  <Field id='raceFilter-order' name='order' as='select' className='form-control'>
+                    <option>Name</option>
+                    <option>Place</option>
+                    <option>Date</option>
+                  </Field>
+                </div>
+                <div className='form-group col-12 col-md-6'>
+                  <label htmlFor='raceFilter-asc'>Ascending or Descending: </label>
+                  <Field id='raceFilter-asc' name='asc' as='select' className='form-control'>
+                    <option>Ascending</option>
+                    <option>Descending</option>
+                  </Field>
+                </div>
+              </div></div>
+              
+            </div>             
+                
+            <div className='form-row'>
+              <button type='submit' className='btn btn-primary mr-1' disabled={props.isSubmitting}>Filter</button>
+              <button type='reset' className='btn btn-danger' onClick={handleReset} disabled={!props.dirty || props.isSubmitting}>Reset</button>
+            </div>
+                
+          </Form>    
+          </div></div>          
         )}
       </Formik>
     )

@@ -86,7 +86,9 @@ class FaceDisplay extends React.Component {
         
         return (
           <div>
-            <h2 className='mt-4'>Faces</h2>
+            <div className='row'><div className='col'>
+              <h2 className='mt-4'>Faces</h2>
+            </div></div>
 
             <FaceFilter onSubmit={(values)=> this.changeFilter(values)} />
             

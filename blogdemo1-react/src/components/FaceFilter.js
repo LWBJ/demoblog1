@@ -31,7 +31,7 @@ function FaceFilter(props) {
         onSubmit = {submitFilter}
       >
         {props=>(
-        <div className='row border rounded border-primary p-4 mt-4'><div className='col'>
+        <div className='row border rounded border-primary p-4 mt-4'><div className='col-12'>
         
         <div className='row'><div className='col'>
           <h3>Filters</h3>
@@ -62,7 +62,7 @@ function FaceFilter(props) {
             <Field id='faceFilter-familiar' name='familiar' as='select' className='form-control'>
               <option>T</option>
               <option>F</option>
-              <option> </option>
+              <option></option>
             </Field>
           </div>
 
@@ -71,7 +71,7 @@ function FaceFilter(props) {
             <Field id='faceFilter-worn_out' name='worn_out' as='select' className='form-control'>
               <option>T</option>
               <option>F</option>
-              <option> </option>
+              <option></option>
             </Field>
           </div>
         </div></div>

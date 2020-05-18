@@ -92,17 +92,37 @@ class RaceDisplay extends React.Component {
         
         return (
           <div>
+            <div className='row'><div className='col-12'>
+              <h2 className='mt-4'>Races</h2>
+            </div></div>
+            
             <RaceFilter onSubmit={(values)=>this.changeFilter(values)} />
-            <p>asc: {this.state.filters.asc?'true':'false'}</p>
-            <Paginator 
-              count = {count}
-              id = 'races'
-              pagination = {pagination}
-              current = {this.state.page}
-              changePage = {(newPageNum)=>this.changePage(newPageNum)}
-            />
-            <p>Total Results: {count}</p>
-            {queryset}
+            
+            <div className='row border rounded border-primary p-4 mt-4'><div className='col-12'>
+              <Paginator 
+                count = {count}
+                id = 'races'
+                pagination = {pagination}
+                current = {this.state.page}
+                changePage = {(newPageNum)=>this.changePage(newPageNum)}
+              />
+              
+              <div className='row mt-4'><div className='col-12'>
+                <p>Total Results: {count}</p>
+              </div></div>
+              
+              <div className='row mb-4'>
+                {queryset}
+              </div>
+              
+              <Paginator 
+                count = {count}
+                id = 'racesBottom'
+                pagination = {pagination}
+                current = {this.state.page}
+                changePage = {(newPageNum)=>this.changePage(newPageNum)}
+              />
+            </div></div>
           </div>
         )
     }
