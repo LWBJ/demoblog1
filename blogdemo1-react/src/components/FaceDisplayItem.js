@@ -5,7 +5,7 @@ function FaceDisplayItem(props) {
     
     return(
       <div className='col-12 col-md-6 col-lg-4 col-xl-3'>
-        <div className='border rounded border-secondary p-4 my-2 col-12'>
+        <div className='border rounded border-secondary p-4 my-2 col-12 h-100'>
           <p>Face: {item.name}</p>
           <p>Race: {item.race_text}</p>
           <p>Place: {item.place_text}</p>

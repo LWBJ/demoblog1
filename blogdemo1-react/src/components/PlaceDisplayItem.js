@@ -5,7 +5,7 @@ function PlaceDisplayItem(props){
     
     return(
       <div className='col-12 col-md-6 col-lg-4 col-xl-3'>
-        <div className='border rounded border-secondary p-4 my-2 col-12'>
+        <div className='border rounded border-secondary p-4 my-2 col-12 h-100'>
           <p>Place: {item.name}</p>
           <p>Races: {item.race_set_list.join(', ')}</p>
           <p>Faces: {item.face_set_list.join(', ')}</p>
