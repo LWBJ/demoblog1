@@ -69,12 +69,19 @@ class FaceDisplay extends React.Component {
     render(){
         let count
         let queryset
+        let loadingIndicator = null
+        
         if (this.state.loading){
-            queryset = <div className='col-12'><p>loading</p></div>
-            count = 'loading'
-        } else if (this.state.data.results && this.state.data.results.length > 0) {
+            loadingIndicator = <div className='loading-indicator border border-secondary'><h1>LOADING</h1></div>
+        }
+        
+        if (this.state.data.results && this.state.data.results.length > 0) {
             queryset = this.state.data.results.map(item=>{
-                return <FaceDisplayItem item={item} />
+                return (
+                  <div className='col-12 col-md-6 col-lg-4 col-xl-3 py-4' key='item.url'>
+                    <FaceDisplayItem item={item} />
+                  </div>
+                )
             })
             count = this.state.data.count
         } else {
@@ -86,6 +93,8 @@ class FaceDisplay extends React.Component {
         
         return (
           <div>
+            {loadingIndicator}
+          
             <div className='row'><div className='col'>
               <h2 className='mt-4'>Faces</h2>
             </div></div>

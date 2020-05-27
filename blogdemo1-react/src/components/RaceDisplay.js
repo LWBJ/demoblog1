@@ -73,16 +73,22 @@ class RaceDisplay extends React.Component {
     render(){
         let count
         let queryset
+        let loadingIndicator = null
         
-        if (this.state.loading) {
-            count = 'loading'
-            queryset = <div className='col-12'><p>loading</p></div>
-        } else if (this.state.data.results && this.state.data.results.length > 0) {
+        if (this.state.loading){
+            loadingIndicator = <div className='loading-indicator border border-secondary'><h1>LOADING</h1></div>
+        }
+        
+        if (this.state.data.results && this.state.data.results.length > 0) {
             count = this.state.data.count
-            queryset = []
-            for (let i=0; i<this.state.data.results.length; i++) {
-                queryset.push(<RaceDisplayItem item={this.state.data.results[i]}/>)
-            }
+            
+            queryset = this.state.data.results.map(item=>{
+                return (
+                  <div className='col-12 col-md-6 col-lg-4 col-xl-3 py-4' key={item.url}>
+                    <RaceDisplayItem item={item}/>
+                  </div>
+                )
+            })
         } else {
             count = 0
             queryset = <div className='col-12'><p>No data</p></div>
@@ -92,6 +98,8 @@ class RaceDisplay extends React.Component {
         
         return (
           <div>
+            {loadingIndicator}
+          
             <div className='row'><div className='col-12'>
               <h2 className='mt-4'>Races</h2>
             </div></div>

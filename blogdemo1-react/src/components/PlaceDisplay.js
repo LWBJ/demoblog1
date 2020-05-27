@@ -76,16 +76,21 @@ class PlaceDisplay extends React.Component {
         
         let queryset
         let count
+        let loadingIndicator = null
         
-        if (this.state.loading) {
-            queryset = <div className='col-12'><p>loading</p></div>
-            count = 'loading'
-        } else if (this.state.data.results && this.state.data.results.length > 0) {
-            queryset = []
-            for (let i=0; i<this.state.data.results.length; i++) {
-              queryset.push(<PlaceDisplayItem item={this.state.data.results[i]} />)
-            }
+        if (this.state.loading){
+            loadingIndicator = <div className='loading-indicator border border-secondary'><h1>LOADING</h1></div>
+        }
+        
+        if (this.state.data.results && this.state.data.results.length > 0) {
             count = this.state.data.count
+            queryset = this.state.data.results.map(item => {
+                return (
+                  <div className='col-12 col-md-6 col-lg-4 col-xl-3 py-4' key={item.url}>
+                    <PlaceDisplayItem item={item} />
+                  </div>
+                )
+            })
         } else {
             queryset = <div className='col-12'><p>No Data</p></div>
             count = 0
@@ -95,6 +100,8 @@ class PlaceDisplay extends React.Component {
         
         return(
           <div>
+            {loadingIndicator}
+            
             <div className='row'><div className='col-12'>
               <h2 className='mt-4'>Places</h2>
             </div></div>

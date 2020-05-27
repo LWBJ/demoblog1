@@ -77,7 +77,7 @@ function FaceFilter(props) {
         </div></div>
           
         <div className='col-12 col-md-8'><div className='form-row'>
-          <div className='form-group col-6'>
+          <div className='form-group col-12 col-md-6'>
             <label htmlFor='faceFilter-order'>Order: </label>
             <Field id='faceFilter-order' name='order' as='select' className='form-control'>
               <option>Name</option>
@@ -86,7 +86,7 @@ function FaceFilter(props) {
             </Field>
           </div>
           
-          <div className='form-group col-6'>
+          <div className='form-group col-12 col-md-6'>
             <label htmlFor='faceFilter-asc'>Ascending or Descending: </label>
             <Field id='faceFilter-asc' name='asc' as='select' className='form-control'>
               <option>Ascending</option>
