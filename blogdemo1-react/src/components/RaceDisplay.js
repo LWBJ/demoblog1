@@ -46,7 +46,7 @@ class RaceDisplay extends React.Component {
     }
     
     refreshData(){
-        let url='https://lwbjdemoblog1.herokuapp.com/apidata/races/?page=' + this.state.page + '&'
+        let url='https://lwbjblogdemo1.herokuapp.com/apidata/races/?page=' + this.state.page + '&'
         url += 'name=' + this.state.filters.name + '&'
         url += 'face=' + this.state.filters.face + '&'
         url += 'place=' + this.state.filters.place + '&'

@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1234')
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-  'lwbjdemoblog1.herokuapp.com',
+  'lwbjblogdemo1.herokuapp.com',
   '127.0.0.1',
 ]
 
@@ -136,7 +136,7 @@ REST_FRAMEWORK = {
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://lwbjdemoblog1.herokuapp.com']
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://lwbjblogdemo1.herokuapp.com']
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)

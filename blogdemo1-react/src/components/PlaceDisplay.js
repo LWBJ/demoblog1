@@ -44,7 +44,7 @@ class PlaceDisplay extends React.Component {
     }
     
     refreshData(){
-        let url = 'https://lwbjdemoblog1.herokuapp.com/apidata/places/?page=' + this.state.page + '&'
+        let url = 'https://lwbjblogdemo1.herokuapp.com/apidata/places/?page=' + this.state.page + '&'
         
         url += 'name=' + this.state.filters.name + '&'
         url += 'race=' + this.state.filters.race + '&'
